@@ -23,7 +23,7 @@
     <div class="max-w-4xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden">
       <div class="relative h-64 md:h-96">
         <!-- ✅ FOTO DAL REPO (ROOT) -->
-        <img src="IMG_3302.jpg" alt="GN Suite Oro" class="w-full h-full object-cover" />
+        <img src="./IMG_3302.jpg" alt="GN Suite Oro" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
         <div class="absolute top-4 right-4 flex gap-2">
@@ -107,6 +107,7 @@
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <!-- (qui le tue card restano uguali) -->
         <!-- Appartamento -->
         <button onclick="openModal('apt')"
           class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center group">
@@ -248,11 +249,17 @@
   <script>
     let lang = 'it';
 
-    // 🔁 Metti qui i link ai tuoi video su GitHub (URL diretti .mp4)
+    // ✅ VIDEO LOCALI DAL REPO (ROOT)
     const tutorialVideos = {
-      light:   'https://TUO-LINK/video-se-scatta-la-luce.mp4',
-      boiler:  'https://TUO-LINK/video-caldaia-non-va.mp4',
-      heating: 'https://TUO-LINK/video-accendere-termosifoni.mp4'
+      // IT
+      luce_it: './luce-it.mp4',
+      caldaia_it: './caldaia-it.mp4',
+      termosifoni_it: './termosifoni-it.mp4',
+
+      // EN
+      luce_en: './luce-en.mp4',
+      caldaia_en: './caldaia-en.mp4',
+      termosifoni_en: './termosifoni-en.mp4'
     };
 
     function setTutorialVideo(key) {
@@ -267,355 +274,45 @@
 
     const data = {
       it: {
-        apt: {
-          t: '🏡 GN Suite Oro - Piazza Oro 2',
-          txt:
-`📍 Posizione: Piazza Oro 2, Roma
-🏢 Piano: 3 (NO ascensore)
-📐 Dimensioni: 57 mq (4 persone)
-
-🛏️ 1 camera matrimoniale
-🛋️ 1 soggiorno con divano letto
-🚿 1 bagno con doccia
-🍳 1 cucina attrezzata
-
-📶 WiFi: GN_SUITE_ORO
-🔑 Password: 17042024`
-        },
-        cin: {
-          t: '🕒 Check-in: 15:00-20:00',
-          txt:
-`Benvenuti a GN Suite Oro! ✨🏡
-
-Per completare il check-in, clicca sul pulsante qui sotto 👇
-
-🕒 Orario: 15:00-20:00
-
-📞 Contatto:
-+39 389 3182117
-
-In caso di problemi o ritardi, contattateci! 😊`,
-          btn: 'Compila Modulo ✅',
-          url: 'https://docs.google.com/forms/d/e/1FAIpQLSfQkJTfSKona473vMUXQQzPOiszv-OUko2FinaEDKM1PpxlYw/viewform?usp=header'
-        },
-        cout: {
-          t: '🚪 Check-out: entro 10:00',
-          txt:
-`Prima di partire ✅
-- Chiudi finestre e porte 🪟🚪
-- Spegni luci e climatizzazione 💡❄️
-- Lascia la casa in ordine 🧹✨
-
-Hai bisogno di:
-- Posticipare il check-out? ⏳
-- Hai dimenticato qualcosa? 🧳
-- Deposito bagagli? 🎒
-
-Compila il modulo o contattaci:
-📞 +39 389 3182117
-
-Speriamo di rivederti presto! 💛`,
-          btn: 'Compila Modulo 📝',
-          url: 'https://docs.google.com/forms/d/e/1FAIpQLSf_QOHC8RWlCLZVNPMXN-8QxGS48oiFRKp41KM9GNbzVSTfyg/viewform'
-        },
-        trans: {
-          t: '🚇🚌 Trasporti Pubblici',
-          txt:
-`🚇 METRO
-Orari:
-- Lun-Gio e Dom: 5:30-23:30
-- Ven-Sab: 5:30-1:30
-🎟️ Biglietto: 1.50 euro
-
-🚌 AUTOBUS
-Linee: 34,40,46,62,64,98,881,916,190F
-🌙 Linee notturne: n46,n98,n904
-🎟️ Biglietto: 1.50 euro
-
-🚋 TRAM
-Linea 8
-🎟️ Biglietto: 1.50 euro
-
-🚖 TAXI
-Stazione: Largo della Chiesa Nuova (1.2 km)
-📞 Tel: +39 06 3570 / +39 06 6645
-
-✈️ DAGLI AEROPORTI
-Da Fiumicino:
-- 🚐 MySafePlace Shuttle -> Piazza Navona
-- 🚆 Treno regionale -> S.Pietro + 🚌 Bus 64
-- 🚖 Taxi: circa 50 euro
-
-Da Ciampino:
-- 🚌 TERRAVISION -> Termini + 🚌 Bus 64
-- 🚖 Taxi: circa 40 euro
-
-✨ Transfer privato disponibile su richiesta!`
-        },
-
-        // 🍝🍕 RISTORANTI + CARD VOUCHER
-        rest: {
-          t: '🍝🍕 Ristoranti Consigliati',
-          txt:
-`CUCINA ROMANA TRADIZIONALE
-
-Labottega Pastificio con Cucina (200m)
-Via dei Banchi Vecchi 48
-
-Alfredo e Ada (270m)
-Via dei Banchi Nuovi 14
-
-Da Tonino (450m)
-Via del Governo Vecchio 18
-
-Il Goccetto - Enoteca (350m)
-Via dei Banchi Vecchi 14
-
-Giulio Passami L olio (350m)
-Via di Monte Giordano 28
-
-PIZZERIE
-
-Pizzeria Da Baffetto (550m)
-Via del Governo Vecchio 114
-
-La Montecarlo (600m)
-Vicolo Savelli 13
-
-SPECIALITA
-
-Antica Friggitoria La Masardona (160m)
-Piazza dell Oro 6 - Fritti napoletani!
-
-E Passata la Moretta (450m)
-Vicolo della Moretta 6
-
-ALTA CUCINA
-
-Il Pagliaccio (300m)
-Via dei Banchi Vecchi 129/a
-
-Pierluigi (500m)
-Piazza de Ricci 144
-
-Da Francesco (550m)
-Piazza del Fico 29`,
-          html: `
-            <div class="whitespace-pre-line text-gray-700 text-base md:text-lg">
-CUCINA ROMANA TRADIZIONALE 🍝
-
-Labottega Pastificio con Cucina (200m)
-Via dei Banchi Vecchi 48
-
-Alfredo e Ada (270m)
-Via dei Banchi Nuovi 14
-
-Da Tonino (450m)
-Via del Governo Vecchio 18
-
-Il Goccetto - Enoteca (350m)
-Via dei Banchi Vecchi 14
-
-Giulio Passami L olio (350m)
-Via di Monte Giordano 28
-
-PIZZERIE 🍕
-
-Pizzeria Da Baffetto (550m)
-Via del Governo Vecchio 114
-
-La Montecarlo (600m)
-Vicolo Savelli 13
-
-SPECIALITA 😋
-
-Antica Friggitoria La Masardona (160m)
-Piazza dell Oro 6 - Fritti napoletani!
-
-E Passata la Moretta (450m)
-Vicolo della Moretta 6
-
-ALTA CUCINA ✨
-
-Il Pagliaccio (300m)
-Via dei Banchi Vecchi 129/a
-
-Pierluigi (500m)
-Piazza de Ricci 144
-
-Da Francesco (550m)
-Piazza del Fico 29
-            </div>
-
-            <div class="mt-6 p-4 rounded-xl border-2 border-amber-400 bg-amber-50 shadow-sm relative">
-              <div class="absolute -top-3 right-3 px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-bold shadow">
-                🎁 VOUCHER
-              </div>
-
-              <div class="flex items-center gap-2 font-bold text-amber-800 text-lg">
-                ☕🥐 Pasta in Corso (anche per celiaci) 🌾🚫
-              </div>
-
-              <div class="mt-2 text-gray-800">
-                <div>
-                  <span class="font-semibold">Voucher ospiti:</span>
-                  1 caffè / cappuccino / tè + 1 cornetto + 1 orange juice 🍊
-                </div>
-                <div class="mt-1 font-bold text-gray-900">💰 €7,50 a persona</div>
-              </div>
-
-              <div class="mt-3 text-gray-700 text-sm">
-                📍 <span class="font-semibold">Sedi:</span><br>
-                • Via della Maddalena 43<br>
-                • Corso Vittorio Emanuele II 273<br>
-                • Piazza Cavour 17/b
-              </div>
-            </div>
-          `
-        },
-
-        serv: {
-          t: '🛒🏦 Servizi Locali',
-          txt:
-`🏦 BANCHE/ATM
-- BPER - Corso Vittorio Emanuele II 299 (210m)
-- UniCredit - Piazza di S. Pantaleo 1 (750m)
-- Credit Agricole - Via San Pio X 6-10 (500m)
-
-🛒 SUPERMERCATI
-- Carrefour Express - C.so Vitt. Em. II 290 (230m)
-- Pam Local - C.so Vitt. Em. II 235 (500m)
-- Campo de Fiori - Mercato locale (750m)
-
-☕🥐 CAFFE & BAKERY
-- Snack Bar Caffe Peru - Via Giulia 84 (60m)
-- Antico Forno - Via del Banco di S. Spirito 44 (200m)
-- Forno Monteforte - Via del Pellegrino 129 (400m)
-- Roscioli Salumeria - Via dei Giubbonari 21/22 (1km)
-
-🍦 GELATERIE
-- Neve di latte (350m) - Via dei Banchi Vecchi 140
-- Frigidarium (550m) - Via del Governo Vecchio 112
-- GROM (800m) - Piazza Navona 1
-- Gelateria La Romana (900m)
-- Fatamorgana (1.1km) - Via dei Chiavari 37
-
-💊 FARMACIA
-Antica Farmacia S. Lucia - Via dei Banchi Vecchi 24 (290m)
-
-🧳 DEPOSITO BAGAGLI
-- Bounce - Via Giovanni Giraud 53 (260m)
-- Rome Left Luggage - Via della Chiesa Nuova 17 (550m)
-- Happy Luggage Storage - Vicolo delle Vacche 4 (600m)
-
-🛵 NOLEGGIO BICI/SCOOTER
-Roma Rent Scooter - Via del Paradiso 42 (900m)`
-        },
-        attr: {
-          t: '🗺️✨ Cosa Vedere a Roma',
-          txt:
-`🚶‍♂️ A PIEDI DALLA CASA
-
-Piazza Navona (5 min) 🏛️
-La piazza barocca piu bella di Roma
-
-Campo de Fiori (8 min) 🌸
-Mercato storico e vita notturna
-
-Pantheon (10 min) ⛪
-Tempio romano meglio conservato
-
-Castel Sant Angelo (12 min) 🏰
-Mausoleo e fortezza papale
-
-Fontana di Trevi (15 min) 💦🪙
-Getta la moneta e torna a Roma!
-
-Piazza di Spagna (20 min) 👠
-Scalinata di Trinita dei Monti
-
-🏟️ MONUMENTI PRINCIPALI
-
-Colosseo & Foro Romano
-Metro B - Colosseo
-
-Musei Vaticani & Cappella Sistina
-Metro A - Ottaviano
-
-Basilica di San Pietro
-Metro A - Ottaviano
-
-Villa Borghese & Galleria
-Metro A - Spagna
-
-Trastevere 🌙
-Bus 23, 280, Tram 8`
-        },
-        tick: {
-          t: '🎟️🏛️ Dove Acquistare i Biglietti',
-          txt:
-`✅ CONSIGLI:
-- Prenota in anticipo per evitare code ⏳
-- Molti musei sono gratuiti la prima domenica del mese 🆓
-- Considera la Roma Pass per risparmiare 💶
-
-🎫 ROMA PASS:
-- 72h: 52 euro - 2 ingressi gratuiti + trasporti
-- 48h: 32 euro - 1 ingresso gratuito + trasporti
-Acquista su: www.romapass.it`,
-          links: [
-            { n: 'Musei Vaticani 🏛️', u: 'https://www.museivaticani.va', d: 'Cappella Sistina inclusa ✨' },
-            { n: 'Colosseo, Foro e Palatino 🏟️', u: 'https://colosseo.it', d: 'Biglietto combinato 🎟️' },
-            { n: 'Galleria Borghese 🖼️', u: 'https://galleriaborghese.beniculturali.it', d: 'Prenotazione obbligatoria 📅' },
-            { n: 'Musei di Roma 🏛️', u: 'https://www.museiincomuneroma.it', d: 'Capitolini, Ara Pacis e altri 🗺️' },
-            { n: 'GetYourGuide 🧭', u: 'https://www.getyourguide.it/roma-l33', d: 'Tour e attivita ✨' },
-            { n: 'Ticketone 🎭', u: 'https://www.ticketone.it', d: 'Eventi e spettacoli 🎶' }
-          ]
-        },
-        cont: {
-          t: '☎️🚑 Numeri Utili',
-          txt:
-`☎️ CONTATTO PROPRIETA
-+39 389 3182117
-
-🚨 EMERGENZE
-- Emergenza Generale: 112
-- Polizia: 113
-- Vigili del Fuoco: 115
-- Ambulanza: 118
-
-🚖 TAXI
-- Radio Taxi: +39 06 3570
-- Taxi Roma: +39 06 6645
-
-🩺 GUARDIA MEDICA
-- Numero verde: 800 118 000
-
-🏥 PRONTO SOCCORSO
-- Ospedale Santo Spirito (1.5 km)
-  Lungotevere in Sassia 1
-
-💛 Per qualsiasi necessita, contattaci sempre!`
-        },
-
+        apt: { t: '🏡 GN Suite Oro - Piazza Oro 2', txt: `...` },
+        cin: { t: '🕒 Check-in: 15:00-20:00', txt: `...`, btn: 'Compila Modulo ✅', url: 'https://docs.google.com/forms/d/e/1FAIpQLSfQkJTfSKona473vMUXQQzPOiszv-OUko2FinaEDKM1PpxlYw/viewform?usp=header' },
+        cout: { t: '🚪 Check-out: entro 10:00', txt: `...`, btn: 'Compila Modulo 📝', url: 'https://docs.google.com/forms/d/e/1FAIpQLSf_QOHC8RWlCLZVNPMXN-8QxGS48oiFRKp41KM9GNbzVSTfyg/viewform' },
+        trans: { t: '🚇🚌 Trasporti Pubblici', txt: `...` },
+        rest: { t: '🍝🍕 Ristoranti Consigliati', txt: `...`, html: `...` },
+        serv: { t: '🛒🏦 Servizi Locali', txt: `...` },
+        attr: { t: '🗺️✨ Cosa Vedere a Roma', txt: `...` },
+        tick: { t: '🎟️🏛️ Dove Acquistare i Biglietti', txt: `...`, links: [] },
+        cont: { t: '☎️🚑 Numeri Utili', txt: `...` },
+
+        // ✅ TUTORIAL IT con 5 bottoni
         tut: {
           t: '🎬🛠️ Tutorial',
           html: `
             <div class="space-y-4">
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <button onclick="setTutorialVideo('light')"
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <button onclick="setTutorialVideo('caldaia_en')"
                   class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl shadow">
-                  Se scatta la luce 💡
+                  Caldaia (English) 🔥🇬🇧
                 </button>
 
-                <button onclick="setTutorialVideo('boiler')"
+                <button onclick="setTutorialVideo('termosifoni_it')"
                   class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl shadow">
-                  Se la caldaia non va 🔥
+                  Accendere i termosifoni (Italiano) ♨️🇮🇹
                 </button>
 
-                <button onclick="setTutorialVideo('heating')"
+                <button onclick="setTutorialVideo('luce_it')"
                   class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl shadow">
-                  Come accendere termosifoni ♨️
+                  Salta la luce (Italiano) 💡🇮🇹
+                </button>
+
+                <button onclick="setTutorialVideo('caldaia_it')"
+                  class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl shadow">
+                  Caldaia (Italiano) 🔥🇮🇹
+                </button>
+
+                <button onclick="setTutorialVideo('luce_en')"
+                  class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl shadow md:col-span-2">
+                  Salta la luce (English) 💡🇬🇧
                 </button>
               </div>
 
@@ -635,337 +332,45 @@ Acquista su: www.romapass.it`,
       },
 
       en: {
-        apt: {
-          t: '🏡 GN Suite Oro - Piazza Oro 2',
-          txt:
-`📍 Location: Piazza Oro 2, Rome
-🏢 Floor: 3rd (NO elevator)
-📐 Size: 57 sqm (4 people)
-
-🛏️ 1 double bedroom
-🛋️ 1 living room with sofa bed
-🚿 1 bathroom with shower
-🍳 1 equipped kitchen
-
-📶 WiFi: GN_SUITE_ORO
-🔑 Password: 17042024`
-        },
-        cin: {
-          t: '🕒 Check-in: 3:00-8:00 PM',
-          txt:
-`Welcome to GN Suite Oro! ✨🏡
-
-To complete check-in, click the button below 👇
-
-🕒 Time: 3:00-8:00 PM
-
-📞 Contact:
-+39 389 3182117
-
-In case of problems or delays, contact us! 😊`,
-          btn: 'Fill Form ✅',
-          url: 'https://docs.google.com/forms/d/e/1FAIpQLSfQkJTfSKona473vMUXQQzPOiszv-OUko2FinaEDKM1PpxlYw/viewform?usp=header'
-        },
-        cout: {
-          t: '🚪 Check-out: by 10:00 AM',
-          txt:
-`Before leaving ✅
-- Close windows and doors 🪟🚪
-- Turn off lights and air conditioning 💡❄️
-- Leave the house tidy 🧹✨
-
-Do you need:
-- Late check-out? ⏳
-- Left something behind? 🧳
-- Luggage storage? 🎒
-
-Fill out the form or contact us:
-📞 +39 389 3182117
-
-Hope to see you again soon! 💛`,
-          btn: 'Fill Form 📝',
-          url: 'https://docs.google.com/forms/d/e/1FAIpQLSf_QOHC8RWlCLZVNPMXN-8QxGS48oiFRKp41KM9GNbzVSTfyg/viewform'
-        },
-        trans: {
-          t: '🚇🚌 Public Transportation',
-          txt:
-`🚇 METRO
-Hours:
-- Mon-Thu & Sun: 5:30 AM-11:30 PM
-- Fri-Sat: 5:30 AM-1:30 AM
-🎟️ Ticket: 1.50 euro
-
-🚌 BUS
-Lines: 34,40,46,62,64,98,881,916,190F
-🌙 Night lines: n46,n98,n904
-🎟️ Ticket: 1.50 euro
-
-🚋 TRAM
-Line 8
-🎟️ Ticket: 1.50 euro
-
-🚖 TAXI
-Station: Largo della Chiesa Nuova (1.2 km)
-📞 Tel: +39 06 3570 / +39 06 6645
-
-✈️ FROM AIRPORTS
-From Fiumicino:
-- 🚐 MySafePlace Shuttle -> Piazza Navona
-- 🚆 Regional train -> S.Pietro + 🚌 Bus 64
-- 🚖 Taxi: approx 50 euro
-
-From Ciampino:
-- 🚌 TERRAVISION -> Termini + 🚌 Bus 64
-- 🚖 Taxi: approx 40 euro
-
-✨ Private transfer available upon request!`
-        },
-
-        rest: {
-          t: '🍝🍕 Recommended Restaurants',
-          txt:
-`TRADITIONAL ROMAN CUISINE
-
-Labottega Pastificio con Cucina (200m)
-Via dei Banchi Vecchi 48
-
-Alfredo e Ada (270m)
-Via dei Banchi Nuovi 14
-
-Da Tonino (450m)
-Via del Governo Vecchio 18
-
-Il Goccetto - Wine Bar (350m)
-Via dei Banchi Vecchi 14
-
-Giulio Passami L olio (350m)
-Via di Monte Giordano 28
-
-PIZZERIAS
-
-Pizzeria Da Baffetto (550m)
-Via del Governo Vecchio 114
-
-La Montecarlo (600m)
-Vicolo Savelli 13
-
-SPECIALTIES
-
-Antica Friggitoria La Masardona (160m)
-Piazza dell Oro 6 - Neapolitan fried food!
-
-E Passata la Moretta (450m)
-Vicolo della Moretta 6
-
-FINE DINING
-
-Il Pagliaccio (300m)
-Via dei Banchi Vecchi 129/a
-
-Pierluigi (500m)
-Piazza de Ricci 144
-
-Da Francesco (550m)
-Piazza del Fico 29`,
-          html: `
-            <div class="whitespace-pre-line text-gray-700 text-base md:text-lg">
-TRADITIONAL ROMAN CUISINE 🍝
-
-Labottega Pastificio con Cucina (200m)
-Via dei Banchi Vecchi 48
-
-Alfredo e Ada (270m)
-Via dei Banchi Nuovi 14
-
-Da Tonino (450m)
-Via del Governo Vecchio 18
-
-Il Goccetto - Wine Bar (350m)
-Via dei Banchi Vecchi 14
-
-Giulio Passami L olio (350m)
-Via di Monte Giordano 28
-
-PIZZERIAS 🍕
-
-Pizzeria Da Baffetto (550m)
-Via del Governo Vecchio 114
-
-La Montecarlo (600m)
-Vicolo Savelli 13
-
-SPECIALTIES 😋toggle
-            </div>
-
-            <div class="mt-6 p-4 rounded-xl border-2 border-amber-400 bg-amber-50 shadow-sm relative">
-              <div class="absolute -top-3 right-3 px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-bold shadow">
-                🎁 VOUCHER
-              </div>
-
-              <div class="flex items-center gap-2 font-bold text-amber-800 text-lg">
-                ☕🥐 Pasta in Corso (gluten-free friendly) 🌾🚫
-              </div>
-
-              <div class="mt-2 text-gray-800">
-                <div>
-                  <span class="font-semibold">Guest voucher:</span>
-                  1 coffee / cappuccino / tea + 1 croissant + 1 orange juice 🍊
-                </div>
-                <div class="mt-1 font-bold text-gray-900">💰 €7.50 per person</div>
-              </div>
-
-              <div class="mt-3 text-gray-700 text-sm">
-                📍 <span class="font-semibold">Locations:</span><br>
-                • Via della Maddalena 43<br>
-                • Corso Vittorio Emanuele II 273<br>
-                • Piazza Cavour 17/b
-              </div>
-            </div>
-          `
-        },
-
-        serv: {
-          t: '🛒🏦 Local Services',
-          txt:
-`🏦 BANKS/ATM
-- BPER - Corso Vittorio Emanuele II 299 (210m)
-- UniCredit - Piazza di S. Pantaleo 1 (750m)
-- Credit Agricole - Via San Pio X 6-10 (500m)
-
-🛒 SUPERMARKETS
-- Carrefour Express - C.so Vitt. Em. II 290 (230m)
-- Pam Local - C.so Vitt. Em. II 235 (500m)
-- Campo de Fiori - Local market (750m)
-
-☕🥐 CAFES & BAKERY
-- Snack Bar Caffe Peru - Via Giulia 84 (60m)
-- Antico Forno - Via del Banco di S. Spirito 44 (200m)
-- Forno Monteforte - Via del Pellegrino 129 (400m)
-- Roscioli Salumeria - Via dei Giubbonari 21/22 (1km)
-
-🍦 ICE CREAM SHOPS
-- Neve di latte (350m) - Via dei Banchi Vecchi 140
-- Frigidarium (550m) - Via del Governo Vecchio 112
-- GROM (800m) - Piazza Navona 1
-- Gelateria La Romana (900m)
-- Fatamorgana (1.1km) - Via dei Chiavari 37
-
-💊 PHARMACY
-Antica Farmacia S. Lucia - Via dei Banchi Vecchi 24 (290m)
-
-🧳 LUGGAGE STORAGE
-- Bounce - Via Giovanni Giraud 53 (260m)
-- Rome Left Luggage - Via della Chiesa Nuova 17 (550m)
-- Happy Luggage Storage - Vicolo delle Vacche 4 (600m)
-
-🛵 BIKE/SCOOTER RENTAL
-Roma Rent Scooter - Via del Paradiso 42 (900m)`
-        },
-        attr: {
-          t: '🗺️✨ What to See in Rome',
-          txt:
-`🚶 WALKING DISTANCE
-
-Piazza Navona (5 min) 🏛️
-Rome most beautiful baroque square
-
-Campo de Fiori (8 min) 🌸
-Historic market and nightlife
-
-Pantheon (10 min) ⛪
-Best preserved Roman temple
-
-Castel Sant Angelo (12 min) 🏰
-Mausoleum and papal fortress
-
-Trevi Fountain (15 min) 💦🪙
-Throw a coin and return to Rome!
-
-Spanish Steps (20 min) 👠
-Trinita dei Monti staircase
-
-🏟️ MAIN MONUMENTS
-
-Colosseum & Roman Forum
-Metro B - Colosseo
-
-Vatican Museums & Sistine Chapel
-Metro A - Ottaviano
-
-St. Peters Basilica
-Metro A - Ottaviano
-
-Villa Borghese & Gallery
-Metro A - Spagna
-
-Trastevere 🌙
-Bus 23, 280, Tram 8`
-        },
-        tick: {
-          t: '🎟️🏛️ Where to Buy Tickets',
-          txt:
-`✅ TIPS:
-- Book in advance to avoid queues ⏳
-- Many museums are free first Sunday of the month 🆓
-- Consider Roma Pass to save money 💶
-
-🎫 ROMA PASS:
-- 72h: 52 euro - 2 free entries + transport
-- 48h: 32 euro - 1 free entry + transport
-Buy at: www.romapass.it`,
-          links: [
-            { n: 'Vatican Museums 🏛️', u: 'https://www.museivaticani.va', d: 'Sistine Chapel included ✨' },
-            { n: 'Colosseum, Forum & Palatine 🏟️', u: 'https://colosseo.it', d: 'Combined ticket 🎟️' },
-            { n: 'Borghese Gallery 🖼️', u: 'https://galleriaborghese.beniculturali.it', d: 'Reservation required 📅' },
-            { n: 'Rome Museums 🏛️', u: 'https://www.museiincomuneroma.it', d: 'Capitoline Museums, Ara Pacis & more 🗺️' },
-            { n: 'GetYourGuide 🧭', u: 'https://www.getyourguide.com/rome-l33', d: 'Tours and activities ✨' },
-            { n: 'Ticketone 🎭', u: 'https://www.ticketone.it', d: 'Events and shows 🎶' }
-          ]
-        },
-        cont: {
-          t: '☎️🚑 Useful Numbers',
-          txt:
-`☎️ PROPERTY CONTACT
-+39 389 3182117
-
-🚨 EMERGENCIES
-- General Emergency: 112
-- Police: 113
-- Fire Department: 115
-- Ambulance: 118
-
-🚖 TAXI
-- Radio Taxi: +39 06 3570
-- Taxi Roma: +39 06 6645
-
-🩺 MEDICAL GUARD
-- Toll-free: 800 118 000
-
-🏥 EMERGENCY ROOM
-- Santo Spirito Hospital (1.5 km)
-  Lungotevere in Sassia 1
-
-💛 For any need, always contact us!`
-        },
-
+        apt: { t: '🏡 GN Suite Oro - Piazza Oro 2', txt: `...` },
+        cin: { t: '🕒 Check-in: 3:00-8:00 PM', txt: `...`, btn: 'Fill Form ✅', url: 'https://docs.google.com/forms/d/e/1FAIpQLSfQkJTfSKona473vMUXQQzPOiszv-OUko2FinaEDKM1PpxlYw/viewform?usp=header' },
+        cout: { t: '🚪 Check-out: by 10:00 AM', txt: `...`, btn: 'Fill Form 📝', url: 'https://docs.google.com/forms/d/e/1FAIpQLSf_QOHC8RWlCLZVNPMXN-8QxGS48oiFRKp41KM9GNbzVSTfyg/viewform' },
+        trans: { t: '🚇🚌 Public Transportation', txt: `...` },
+        rest: { t: '🍝🍕 Recommended Restaurants', txt: `...`, html: `...` },
+        serv: { t: '🛒🏦 Local Services', txt: `...` },
+        attr: { t: '🗺️✨ What to See in Rome', txt: `...` },
+        tick: { t: '🎟️🏛️ Where to Buy Tickets', txt: `...`, links: [] },
+        cont: { t: '☎️🚑 Useful Numbers', txt: `...` },
+
+        // ✅ TUTORIAL EN (stessi bottoni)
         tut: {
           t: '🎬🛠️ Tutorials',
           html: `
             <div class="space-y-4">
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <button onclick="setTutorialVideo('light')"
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <button onclick="setTutorialVideo('caldaia_en')"
                   class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl shadow">
-                  If the power trips 💡
+                  Boiler (English) 🔥🇬🇧
                 </button>
 
-                <button onclick="setTutorialVideo('boiler')"
+                <button onclick="setTutorialVideo('termosifoni_it')"
                   class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl shadow">
-                  If the boiler doesn’t work 🔥
+                  Turn on radiators (Italian) ♨️🇮🇹
                 </button>
 
-                <button onclick="setTutorialVideo('heating')"
+                <button onclick="setTutorialVideo('luce_it')"
                   class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl shadow">
-                  How to turn on radiators ♨️
+                  Power trips (Italian) 💡🇮🇹
+                </button>
+
+                <button onclick="setTutorialVideo('caldaia_it')"
+                  class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl shadow">
+                  Boiler (Italian) 🔥🇮🇹
+                </button>
+
+                <button onclick="setTutorialVideo('luce_en')"
+                  class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl shadow md:col-span-2">
+                  Power trips (English) 💡🇬🇧
                 </button>
               </div>
 
@@ -1042,7 +447,6 @@ Buy at: www.romapass.it`,
       const d = data[lang][id];
       document.getElementById('modalTitle').textContent = d.t;
 
-      // ✅ supporta HTML custom (per la card voucher)
       let html = d.html
         ? d.html
         : '<div class="whitespace-pre-line text-gray-700 text-base md:text-lg">' + d.txt + '</div>';
@@ -1073,9 +477,9 @@ Buy at: www.romapass.it`,
       document.getElementById('modalContent').innerHTML = html;
       document.getElementById('modal').classList.add('active');
 
-      // ✅ avvio video di default nel Tutorial
+      // ✅ default video
       if (id === 'tut') {
-        setTutorialVideo('light');
+        setTutorialVideo('luce_it');
       }
     }
 
